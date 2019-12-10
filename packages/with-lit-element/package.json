@@ -19,7 +19,7 @@
   "scripts": {
     "start": "polymer serve",
     "build": "polymer build",
-    "serve": "serve -l 3004 build/default"
+    "serve": "polymer build && serve -l 3004 build/default"
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "2.4.0",

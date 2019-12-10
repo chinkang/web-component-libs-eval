@@ -17,8 +17,9 @@ Web components should be seamlessly integrable into any project regardless the f
 1. Polymer's lit-element
 
 # How to run
+1. Run `yarn` to install deps
 1. Run `yarn bootstrap`
-1. Run `yarn serve` to serve the static files, and navigate `http://localhost:3000` to view the libraries in action.
+1. Run `yarn start` to build and serve, navigate to `http://localhost:3000` to view the libraries in action.
 
 # Bundle size quick view
 
@@ -30,9 +31,10 @@ Web components should be seamlessly integrable into any project regardless the f
 |Pure Polymer LitElement | custom-elements-es5-adapter.js <br/>webcomponents-loader.js <br /> start-lit-element.js <br /> lazy-element | 0.95KB <br /> 6 KB <br /> 135 KB <br /> 705 KB | - <br /> 2.4 KB <br /> 32 KB <br /> 130 KB |
 |Pure Stencil | \<hash>.js <br /> \<hash>.entry.js | 8 KB <br /> 124 KB | 4 KB <br /> 41.2 KB |
 |Stencil with React (not minified, VOID) | entry.js | 1.4 MB | 321 KB |
-|Pure Angular (compiled by ng-cli) | main-es2015.js | 49 KB | 48 KB
-|1 Hybrids web component in Angular (compiled by ng-cli) | main-es2015.js | 592 KB | 162 KB
-|2 Hybrids web components in Angular (compiled by ng-cli) | main-es2015.js | 1.1 MB | 309 KB
+|Pure Angular (compiled by ng-cli) | main-es2015.js | 49 KB | 48 KB |
+|Only React (create-react-app version) | main-trunk.js | 256 KB | 80 KB |
+|1 Hybrids web component in Angular (compiled by ng-cli) | main-es2015.js | 592 KB | 162 KB |
+|2 Hybrids web components in Angular (compiled by ng-cli) | main-es2015.js | 1.1 MB | 309 KB |
 
 \* The `main-es2015.js` in the `2 Hybrids web components in Angular` includes two distributed files (to demonstrate multiple web components import, 540+ KB each file) taken from `Hybrids with React` module.
  It is pretty much the sum of 542 KB + 542 KB + 49 KB.
@@ -42,9 +44,12 @@ invalidate on Stencil's lifecycle which trigger re-render.
 
 # Notes
 1. For the `React` related packages above, there is no enhancement done like code splitting (good for common sharing) on webpack, probably it could helps with aysnc loads for speed.
+   1. Bundle of `create-react-app` with `lodash` and `moment` is only ~256 KB (non-gzip), which is far smaller than the `main.js` in `Only React` module.
 
 
 # Todo
-1. Tree-shaking in bundle process
+1. Chunking and tree-shaking in bundle process
+1. Improvement to load polyfills only when needed (just like what Stencil did)
+1. Find out the options of resource sharing (eg: unified-styling, theming, i18n, ...)
 1. Unit test and E2E test
 1. CI/CD
