@@ -1,0 +1,34 @@
+{
+  "name": "with-lit-element",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Chin Kang <chinkangtan@airasia.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/with-lit-element.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "scripts": {
+    "start": "polymer serve",
+    "build": "polymer build",
+    "serve": "serve -l 3004 build/default"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "2.4.0",
+    "lit-element": "2.2.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "polymer": "^0.5.0",
+    "serve": "^11.2.0"
+  }
+}

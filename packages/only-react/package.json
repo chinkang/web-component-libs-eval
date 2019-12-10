@@ -1,0 +1,43 @@
+{
+  "name": "only-react",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Chin Kang <chinkangtan@airasia.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/only-react.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "scripts": {
+    "start": "webpack && serve",
+    "serve": "webpack && serve -l 3001"
+  },
+  "dependencies": {
+    "babel-plugin-lodash": "^3.3.4",
+    "css-loader": "^3.2.1",
+    "lodash": "^4.17.15",
+    "lodash-webpack-plugin": "^0.11.5",
+    "moment": "^2.24.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "serve": "^11.2.0",
+    "webpack-bundle-analyzer": "^3.6.0"
+  }
+}
