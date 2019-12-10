@@ -29,13 +29,22 @@ Web components should be seamlessly integrable into any project regardless the f
 |Hybrids with React | main.js | 542 KB | 148 KB |
 |Pure Polymer LitElement | custom-elements-es5-adapter.js <br/>webcomponents-loader.js <br /> start-lit-element.js <br /> lazy-element | 0.95KB <br /> 6 KB <br /> 135 KB <br /> 705 KB | - <br /> 2.4 KB <br /> 32 KB <br /> 130 KB |
 |Pure Stencil | \<hash>.js <br /> \<hash>.entry.js | 8 KB <br /> 124 KB | 4 KB <br /> 41.2 KB |
-|Stencil with React (not minified) | entry.js | 1.4 MB | 321 KB |
+|Stencil with React (not minified, VOID) | entry.js | 1.4 MB | 321 KB |
 |Pure Angular (compiled by ng-cli) | main-es2015.js | 49 KB | 48 KB
-|Hybrids in Angular (compiled by ng-cli) 1 web components | main-es2015.js | 592 KB | 162 KB
-|Hybrids in Angular (compiled by ng-cli) 2 web components | main-es2015.js | 1.1 MB | 309 KB
+|1 Hybrids web component in Angular (compiled by ng-cli) | main-es2015.js | 592 KB | 162 KB
+|2 Hybrids web components in Angular (compiled by ng-cli) | main-es2015.js | 1.1 MB | 309 KB
 
-\* The `main-es2015.js` in the `Hybrids in Angular` includes two distributed files (to demonstrate multiple web components import, 540+ KB each file) taken from `Hybrids with React` module.
+\* The `main-es2015.js` in the `2 Hybrids web components in Angular` includes two distributed files (to demonstrate multiple web components import, 540+ KB each file) taken from `Hybrids with React` module.
+ It is pretty much the sum of 542 KB + 542 KB + 49 KB.
+ 
+\** `Stencil with React` is just an attempt to try using React in Stencil, Stencil is not designed for this purpose, thus the internal state of React will not trigger
+invalidate on Stencil's lifecycle which trigger re-render. 
+
+# Notes
+1. For the `React` related packages above, there is no enhancement done like code splitting (good for common sharing) on webpack, probably it could helps with aysnc loads for speed.
+
 
 # Todo
+1. Tree-shaking in bundle process
 1. Unit test and E2E test
 1. CI/CD
